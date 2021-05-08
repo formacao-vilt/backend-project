@@ -26,6 +26,10 @@
 	    <version>1.2</version>
 	</dependency>
   </dependencies>
+  <properties>
+     <maven.compiler.source>1.8</maven.compiler.source>
+     <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
   <build>
     <finalName>sistema</finalName>
   </build>
