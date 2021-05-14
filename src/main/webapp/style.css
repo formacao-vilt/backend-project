@@ -1,0 +1,20 @@
+#banner {
+  background: url("https://i.picsum.photos/id/210/1600/350.jpg?hmac=u5C8ihcdKxZE0rfrOYEZtcZAtuGdQGFflz4x4n9dFDA")
+    no-repeat center;
+  padding: 175px 0;
+  position: relative;
+  background-size: cover;
+}
+
+#banner h1 {
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+  padding: 50px 50px;
+}
+
+#lista-alunos,
+#lista-aprovados,
+#lista-reprovados {
+	overflow: scroll;
+}
