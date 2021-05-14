@@ -195,7 +195,7 @@
 	                </thead>
 	                <tbody>
 	                    <c:forEach var="aluno" items="${alunos}">
-	                    	<c:if test="${aluno.media > 7 }">
+	                    	<c:if test="${aluno.media >= 7 }">
 			                    <tr>
 			                        <td data-label="Nome"><c:out value="${aluno.nome}"/></td>
 			                        <td data-label="CPF"><c:out value="${aluno.cpf}"/></td>
