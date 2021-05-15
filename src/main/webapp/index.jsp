@@ -22,6 +22,8 @@
   </head>
   <body>
   	<c:set var="quantidadeDeAlunos" value="${fn:length(alunos)}" />
+    <c:set var="contemAprovados" value="${false}" />
+    <c:set var="contemReprovados" value="${false}" />
     <nav>
       <a href="#conteudo">Conteúdo</a>
       <a href="#cadastrar">Cadastrar</a>
@@ -192,13 +194,91 @@
 		              <td><c:out value="${aluno.nivel}" /></td>
 		              <c:choose>
 		              	<c:when test="${aluno.media >= 7}">
+                      <c:set var="contemAprovados" value="${true}" />
 		              		<td class="bg-success text-white"><c:out value="${aluno.media}" /></td>
 		              	</c:when>
 		              	<c:otherwise>
+                      <c:set var="contemReprovados" value="${true}" />
 		              		<td class="bg-danger text-white"><c:out value="${aluno.media}" /></td>
 		              	</c:otherwise>
 		              </c:choose>
 		            </tr>
+	          	</c:forEach>
+	          </tbody>
+	        </table>
+	      </div>
+	    </section>
+	</c:if>
+
+  <c:if test="${contemAprovados eq true}">
+		<section id="lista-aprovados">
+	      <div class="my-container">
+	        <h2>Lista de Aprovados</h2><br>
+	        <table class="table table-striped">
+	          <thead>
+	            <tr>
+	              <th>Nome completo</th>
+	              <th>CPF</th>
+	              <th>Nascimento</th>
+	              <th>Sexo</th>
+	              <th>Email</th>
+	              <th>Celular</th>
+	              <th>Nivel</th>
+	              <th>Nota</th>
+	            </tr>
+	          </thead>
+	          <tbody>
+	          	<c:forEach var="aluno" items="${alunos}">
+                <c:if test="${aluno.media >= 7}">
+                  <tr>
+                    <td><c:out value="${aluno.nome}" /></td>
+                    <td><c:out value="${aluno.cpf}" /></td>
+                    <td><fmt:formatDate value="${aluno.dataDeNascimento}" pattern="dd/MM/yyyy"/></td>
+                    <td><c:out value="${aluno.sexo}"/></td>
+                    <td><c:out value="${aluno.email}"/></td>
+                    <td><c:out value="${aluno.celular}"/></td>
+                    <td><c:out value="${aluno.nivel}" /></td>
+                    <td class="bg-success text-white"><c:out value="${aluno.media}" /></td>
+                  </tr>
+                </c:if>
+	          	</c:forEach>
+	          </tbody>
+	        </table>
+	      </div>
+	    </section>
+	</c:if>
+
+  <c:if test="${contemReprovados eq true}">
+		<section id="lista-reprovados">
+	      <div class="my-container">
+	        <h2>Lista de Reprovados</h2><br>
+	        <table class="table table-striped">
+	          <thead>
+	            <tr>
+	              <th>Nome completo</th>
+	              <th>CPF</th>
+	              <th>Nascimento</th>
+	              <th>Sexo</th>
+	              <th>Email</th>
+	              <th>Celular</th>
+	              <th>Nivel</th>
+	              <th>Nota</th>
+	            </tr>
+	          </thead>
+	          <tbody>
+	          	<c:forEach var="aluno" items="${alunos}">
+                <c:if test="${aluno.media < 7}">
+                  <tr>
+                    <td><c:out value="${aluno.nome}" /></td>
+                    <td><c:out value="${aluno.cpf}" /></td>
+                    <td><fmt:formatDate value="${aluno.dataDeNascimento}" pattern="dd/MM/yyyy"/></td>
+                    <td><c:out value="${aluno.sexo}"/></td>
+                    <td><c:out value="${aluno.email}"/></td>
+                    <td><c:out value="${aluno.celular}"/></td>
+                    <td><c:out value="${aluno.nivel}" /></td>
+                    <td class="bg-danger text-white"><c:out value="${aluno.media}" /></td>
+                  </tr>
+                </c:if>
 	          	</c:forEach>
 	          </tbody>
 	        </table>
