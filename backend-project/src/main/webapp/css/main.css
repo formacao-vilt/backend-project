@@ -1,0 +1,111 @@
+body {
+	background: #f5f5f5;
+	scroll-behavior: smooth;
+}
+
+header {
+	padding: 20px;
+	background: #fff;
+	text-align: center;
+}
+
+nav {
+	text-align: center;
+	background: #222325;
+	padding: 20px;
+}
+
+nav a {
+	color: #fff;
+	display: inline-block;
+	margin: 0 10px;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+
+nav a:hover {
+	font-weight: bold;
+}
+
+ul {
+	margin: 0;
+	padding: 0 0 0 16px;
+}
+
+hr {
+	margin: 30px 0;
+}
+
+.my-container {
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+section {
+	padding: 40px 20px;
+}
+
+section:nth-child(odd) {
+	background: #fff;
+}
+
+#banner {
+	padding: 0;
+	text-align: center;
+}
+
+#banner img {
+	max-width: 100%;
+}
+
+#cadastrar {
+
+}
+
+#cadastrar ul {
+	padding: 0;
+	list-style: none;
+	margin-bottom: 30px;
+}
+
+#cadastrar ul li {
+	display: block;
+	margin-bottom: 20px;
+}
+
+#cadastrar ul li label {
+	display: inline-block;
+	width: 112px;
+}
+
+#cadastrar ul li input {
+	min-width: 200px;
+	display: inline-block;
+}
+
+#lista table {
+	width: 100%;
+	vertical-align:top;
+	text-align: left;
+}
+
+#lista table tr th, #lista table tr td {
+	border: 1px solid #ccc;
+	padding: 8px;
+}
+
+.color-red {
+	background: red;
+	color: #fff;
+}
+.color-green {
+	background: #3c3;
+	color: #fff;
+}
+
+footer {
+	padding: 60px 20px;
+	background: #06549c;
+	color: #fff;
+	text-align: center;
+}
