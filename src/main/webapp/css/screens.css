@@ -1,0 +1,219 @@
+/*ARQUIVO DE ALTERAÇÕES DE ESTILO PARA AS DIFERENTES TELA DO WEBSITE*/
+
+/*TELA DE LARGURA ATÉ 1710px*/
+@media screen and (max-width: 1710px) {
+    /*Titulos dos inputs */
+    .form ul li label {
+        width: 14%;
+    }
+}
+
+/*TELA DE LARGURA ATÉ 1490px*/
+@media screen and (max-width: 1490px) {
+    /*Titulos dos inputs */
+    .form ul li label {
+        width: 18%;
+    }
+}
+
+/*TELA DE LARGURA ATÉ 1330px*/
+@media screen and (max-width: 1330px) {
+    /*Titulos dos inputs */
+    .form ul li label {
+        width: 20%;
+    }
+}
+
+/*TELA DE LARGURA ATÉ 1210px*/
+@media screen and (max-width: 1210px) {
+    /*Titulos dos inputs */
+    .form ul li label {
+        width: 24%;
+    }
+}
+
+/*TELA DE LARGURA ATÉ 1040px*/
+@media screen and (max-width: 1040px) {
+    /*Titulos dos inputs */
+    .form ul li label {
+        width: 26%;
+    }
+
+    /*Titulo da tabela alunos*/
+    #lista .my-container #titulo-tabela {
+        text-align: center;
+        padding: 0;
+        padding-bottom: 5%;
+    }
+     
+    /*Links do menu navegação*/
+    nav a {
+        font-size: 1.5rem;
+        letter-spacing: 0.1rem;
+    }
+}
+
+/*TELA DE LARGURA ATÉ 1030px*/
+@media screen and (max-width: 1030px) {
+    /*Titulo dos dados da tabela alunos*/
+    section div table tr:first-child {
+        display: none;
+    }
+
+    /*Dados da tabela*/
+    section div table tr{
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+    }
+
+    /*Conteudo principal do website*/
+    #conteudo {
+        font-size: 0.8rem;
+        padding: 2.5rem;
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
+
+    /*titulo princpal do website*/
+    header h1 {
+        font-size: 1.2rem;
+    }
+
+    /*Imagem*/
+    #banner img {
+        height: 20rem;
+    }
+
+    /*Titulo da tabela*/
+    #lista .my-container #titulo-tabela {
+        text-align: center;
+        padding: 0;
+        padding-bottom: 5%;
+    }
+
+    /*Todos os titulos h2*/
+    h2 {
+        text-align: center;
+    }
+}
+
+/*TELA DE LARGURA ATÉ 875px*/
+@media (max-width: 875px) {
+    /*Titulo dos inputs*/
+    .form ul li label {
+        width: 32%;
+    }
+
+    /*Titulo da tabela*/
+    #lista div h2 {
+        font-size: 1.2rem;
+        padding-left: 40%;
+    }
+}
+
+/*TELA DE LARGURA ATÉ 650px*/
+@media screen and (max-width: 650px) {
+    /*Conteudo princpal do website*/
+    #conteudo {
+        font-size: 0.6rem;
+        padding: 1.25rem;
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+    }
+}
+
+/*TELA DE LARGURA ATÉ 600px*/
+@media screen and (max-width: 600px) {
+    /*Container do formulário cadastrar*/
+    #cadastrar {
+        margin: 0 auto;
+        padding-top: 1rem;
+        padding-left: 3rem;
+        padding-right: 3rem;
+        padding-bottom: 1rem;
+    }
+
+    /*Titulo formulário cadastrar*/
+    #cadastrar div h2 {
+        font-size: 1rem;
+    }
+
+    /*Titulo tabela alunos*/
+    #lista div h2 {
+        padding-left: 25%;
+        font-size: 1rem;
+    }
+
+    /*Container tabela alunos*/
+    #lista {
+        padding: 1rem;
+    }
+
+    /*Links do menu navegação*/
+    nav a{
+        font-size: 0.8rem;
+        padding: 0.5rem;
+    }
+}
+
+/*TELA DE LARGURA ATÉ 411px*/
+@media screen and (max-width: 411px) {
+    /*Titulo da tabela alunos*/
+    #lista .my-container #titulo-tabela {
+        text-align: center;
+        padding: 0;
+        padding-bottom: 5%;
+    }
+
+    /*Titulos dos inputs*/
+    .form ul li label {
+        width: 35%;
+    }
+}
+
+/*TELA DE LARGURA ATÉ 375px*/
+@media screen and (max-width: 375px) {
+    /*Titulo principal do website*/
+    header h1 {
+        font-size: 1rem;
+    }
+
+    /*Links do menu navegação*/
+    nav a{
+        font-size: 0.7rem;
+        padding: 0.2rem;
+    }
+
+    /*Todos os titulos h2*/
+    h2 {
+        text-align: center;
+    }
+
+    /*Titulo da tabela alunos*/
+    #lista .my-container #titulo-tabela {
+        text-align: center;
+        padding: 0;
+        padding-bottom: 5%;
+    }
+
+    /*Titulos dos inputs*/
+    .form ul li label {
+        width: 35%;
+        font-size: 0.9rem;
+    }
+}
+
+/*TELA DE LARGURA ATÉ 280px*/
+@media screen and (max-width: 280px) {
+    /*Links do menu navegação*/
+    nav a {
+        font-size: 0.5rem;
+        font-weight: bold;
+    }
+
+    /*Titulo princpal do website*/
+    header h1 {
+        font-size: 0.9rem;
+    }
+}

@@ -1,0 +1,62 @@
+/*ESTILIZAÇÃO PARA TELAS DE ATÉ 770PX DE LARGURA*/
+@media screen and (max-width: 770px) {
+    /*LABELS DOS INPUTS DO FORM*/
+   label {
+       font-size: 0.9rem;
+   }
+}
+
+/*ESTILIZAÇÃO PARA TELAS DE ATÉ 580PX DE LARGURA*/
+@media screen and (max-width: 580px) {
+    /*TÍTULOS*/
+    h1, h2 {
+        font-size: 1.5rem;
+    }
+    /*LINKS DA NAV*/
+    a {
+        font-size: 1rem;
+    }
+}
+
+/*ESTILIZAÇÃO PARA TELAS DE ATÉ 460PX DE LARGURA*/
+@media screen and (max-width: 460px) {
+    /*TÍTULOS*/
+    h1, h2 {
+        font-size: 1.2rem;
+    }
+    /*LINKS DA NAV*/
+    a {
+        font-size: 0.8rem;
+    }
+}
+
+/*ESTILIZAÇÃO PARA TELAS DE ATÉ 375PX DE LARGURA*/
+@media screen and (max-width: 375px) {
+    /*TÍTULOS*/
+    h1, h2 {
+        font-size: 1rem;
+        font-weight: bold;
+    }
+
+    /*LINKS DA NAV*/
+    a {
+        font-size: 0.6rem;
+        font-weight: bold;
+    }
+}
+
+/*ESTILIZAÇÃO PARA TELAS DE ATÉ 280PX DE LARGURA (MENOR LARGURA COM RESPONSIVIDADE DISPONÍVEL*/
+@media screen and (max-width: 280px) {
+    /*TÍTULOS*/
+    h1, h2 {
+        font-size: 0.8rem;
+        font-weight: bold;
+    }
+
+    /*LINKS DA NAV*/
+    a {
+        font-size: 0.52rem;
+        font-weight: bold;
+    }
+}
+
