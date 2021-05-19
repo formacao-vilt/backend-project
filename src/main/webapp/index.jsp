@@ -16,13 +16,16 @@
     <!-- CSS -->
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/utilizando-bootstrap.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 
 <body>
 	<c:set var="media" value="${7}"/>
 	<c:set var="quantidadeDeAlunos" value="${fn:length(alunos)}" />
+	<% if(session.getAttribute("username") == null ){
+		response.sendRedirect("login.jsp");
+	}
+	%>
     <header>
         <nav class="navbar navbar-light my-navbar">
             <ul>
@@ -195,7 +198,7 @@
 	                </thead>
 	                <tbody>
 	                    <c:forEach var="aluno" items="${alunos}">
-	                    	<c:if test="${aluno.media >= 7 }">
+	                    	<c:if test="${aluno.media >= media }">
 			                    <tr>
 			                        <td data-label="Nome"><c:out value="${aluno.nome}"/></td>
 			                        <td data-label="CPF"><c:out value="${aluno.cpf}"/></td>
@@ -241,7 +244,7 @@
 	                </thead>
 	                <tbody>
 	                    <c:forEach var="aluno" items="${alunos}">
-	                    	<c:if test="${aluno.media < 7 }">
+	                    	<c:if test="${aluno.media < media }">
 			                    <tr>
 			                        <td data-label="Nome"><c:out value="${aluno.nome}"/></td>
 			                        <td data-label="CPF"><c:out value="${aluno.cpf}"/></td>
@@ -277,7 +280,6 @@
     <script src="sweetalert2.all.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <script src="js/utilizando-bootstrap.js"></script>
     <script src="js/bootstrap.min.js"></script>
 
 </body>
