@@ -20,10 +20,6 @@ ul {
     list-style: none;
 }
 
-a {
-    text-decoration: none;
-}
-
 img {
     display: block;
     max-width: 100%;
@@ -191,6 +187,20 @@ footer {
 footer p {
     color: #fff;
     text-align: center;
+}
+
+.items {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.items svg {
+	color: #fff;
+}
+
+#logout {
+	background-color: #05539b !important;
 }
 
 @media screen and (max-width: 600px) {

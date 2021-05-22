@@ -13,6 +13,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Treinamento Indaiatuba Abril 2021</title>
+    <script src="https://unpkg.com/feather-icons"></script>
     <!-- CSS -->
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
@@ -272,10 +273,16 @@
 	    </section>
  
     <footer>
-        <p>Copyright 2021 | VILT GROUP</p>
+    	<div class="items">
+        	<p>Copyright 2021 | VILT GROUP</p>
+        	<form action="Logout"><button id="logout" type="submit" value="Logout"><i data-feather="log-out"></i></button></form>
+        </div>
     </footer>
 
     <!-- js -->
+     <script>
+      feather.replace()
+    </script>
     <script src="js/main.js"></script>
     <script src="sweetalert2.all.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.js"></script>
