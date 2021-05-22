@@ -21,22 +21,47 @@
 <!-- CSS -->
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/utilizando-bootstrap.css">
+<script type="text/javascript">
+	function excluiu(){
+		alert('Campos serão apagados...')
+	}
+	function removerTabela(){
+		var table1 = document.getElementById('tabela2').remove()
+		var titulo1 = document.getElementById('tituloaprovado').remove()
+		var btn1 = document.getElementById('btntabela2').remove()
+		document.getElementById('lista2').remove()
+	}
+	function removerTabela2(){
+		var table2 = document.getElementById('tabela3').remove()
+		var titulo2 = document.getElementById('tituloreprovado').remove()
+		var btn2 = document.getElementById('btntabela3').remove()
+		document.getElementById('lista3').remove()
+	}
+	function removerTabela3(){
+		var table3 = document.getElementById('tabela').remove()
+		var titulo3 = document.getElementById('tituloalunos').remove()
+		var btn3 = document.getElementById('btntabela1').remove()
+		document.getElementById('lista1').remove()
+	}
+</script>
 </head>
 
 <body>
 	<c:set var="quantidadeDeAlunos" value="${fn:length(alunos)}" />
+	<c:set var="aprovados" value="${false}" />
+	<c:set var="reprovados" value="${false}" />
 
 	<nav id="cabecalho">
+	<a href="https://www.vilt-group.com/pt/" target="_blank"><img alt="erro" src="css/vilt.png" id="img"></a>
 		<a href="#conteudo" class="links" id="link1">CONTEÚDO</a>
 		<center>
 			<a href="#cadastrar" class="links" id="link2">CADASTRAR</a>
 		</center>
 
 		<c:if test="${quantidadeDeAlunos > 0}">
-			<a href="#lista" class="links" id="link3">LISTA DE ALUNOS</a>
+			<a href="#lista1" class="links" id="link3">LISTA DE ALUNOS</a>
 		</c:if>
-
-
+	<a href="https://www.fiec.com.br/site/index.do" target="_blank"><img alt="erro" src="css/fiec.png" id="img2"></a>
 	</nav>
 
 	<header>
@@ -136,7 +161,7 @@
 						</div>
 						<div class="col-md-6">
 							<label>Celular*</label> <input type="text" id="celular"
-								class="form-control" name="cel" onclick="style.outline = null"
+								class="form-control" id="celu" name="cel" onclick="style.outline = null"
 								required>
 							<div class="invalid-feedback">Prencha este campo por favor!
 							</div>
@@ -169,16 +194,16 @@
 				<hr>
 				<p id="obrigatorio">* Campo obrigatório</p>
 				<hr>
-				<button id="btncadastro" class="btn btn-dark" type="submit"
-					onclick="return validar()">Cadastrar</button>
+				<button id="btncadastro" class="btn btn-dark" type="submit" onclick="return validar()">Cadastrar</button>
+				<button id="btnreset" class="btn btn-danger" type="reset" onclick="excluiu()">Limpar Campos</button>
 			</form>
 		</div>
 	</section>
 
 	<c:if test="${quantidadeDeAlunos > 0}">
-		<section id="lista">
+		<section id="lista1">
 			<div class="my-container" id="container3">
-				<h2>Lista de alunos</h2>
+				<h2 id="tituloalunos">Lista de alunos - <c:out value="${quantidadeDeAlunos}"></c:out></h2> 
 				<table id="tabela" class="table table-striped">
 					<thead>
 						<tr>
@@ -206,10 +231,13 @@
 								<td><c:out value="${aluno.nivel}" /></td>
 								<c:choose>
 									<c:when test="${aluno.media >= 7}">
+										
+										<c:set var="aprovados" value="${true}" />
 										<td class="bg-success text-white"><c:out
 												value="${aluno.media}" /></td>
 									</c:when>
 									<c:otherwise>
+										<c:set var="reprovados" value="${true}" />
 										<td class="bg-danger text-white"><c:out
 												value="${aluno.media}" /></td>
 									</c:otherwise>
@@ -218,13 +246,16 @@
 						</c:forEach>
 					</tbody>
 				</table>
+				<button id="btntabela1" class="btn btn-danger" onclick="removerTabela3()">Excluir tabela</button>
 			</div>
+		</section>
+		</c:if>
 
-
-			<c:forEach items="${alunos}" var="aluno">
-				<c:if test="${quantidadeDeAlunos > 0 && aluno.media >= 7 }">
+			
+				<c:if test="${aprovados == true}">
+				<section id="lista2">
 					<div class="my-container" id="container4">
-						<h2>Lista de aprovados</h2>
+						<h2 id="tituloaprovado">Lista de aprovados</h2>
 						<table id="tabela2" class="table table-striped">
 							<thead>
 								<tr>
@@ -240,7 +271,8 @@
 							</thead>
 							<tbody>
 
-
+							<c:forEach items="${alunos}" var="aluno">
+								<c:if test="${aluno.media >= 7}">
 								<tr>
 
 									<td><c:out value="${aluno.nome}" /></td>
@@ -262,18 +294,22 @@
 											value="${aluno.media}" /></td>
 
 								</tr>
-
+								</c:if>
+							</c:forEach>
 							</tbody>
 						</table>
+						<button id="btntabela2" class="btn btn-danger" onclick="removerTabela()">Excluir tabela</button>
 					</div>
+					</section>
 				</c:if>
-			</c:forEach>
+			
 
 
-			<c:forEach items="${alunos}" var="aluno">
-				<c:if test="${quantidadeDeAlunos > 0 && aluno.media < 7 }">
+			
+				<c:if test="${reprovados == true}">
+				<section id="lista3">
 					<div class="my-container" id="container5">
-						<h2>Lista de reprovados</h2>
+						<h2 id="tituloreprovado">Lista de reprovados</h2>
 						<table id="tabela3" class="table table-striped">
 							<thead>
 								<tr>
@@ -288,8 +324,8 @@
 								</tr>
 							</thead>
 							<tbody>
-
-
+								<c:forEach items="${alunos}" var="aluno">
+									<c:if test="${aluno.media < 7}">
 								<tr>
 
 									<td><c:out value="${aluno.nome}" /></td>
@@ -311,20 +347,33 @@
 											value="${aluno.media}" /></td>
 
 								</tr>
-
+								</c:if>
+								</c:forEach>
 							</tbody>
 						</table>
+						<button id="btntabela3" class="btn btn-danger" onclick="removerTabela2()">Excluir tabela</button>	
 					</div>
+				</section>
 				</c:if>
-			</c:forEach>
-		</section>
-	</c:if>
+
+
+	
+
 
 	<footer>
-		<p id="copy">Copyright 2021 | VILT GROUP</p>
+		<p id="copyrodape">Copyright 2021 | VILT GROUP</p>
 	</footer>
 
 	<!-- js -->
+	<script src="js/jquery-3.6.0.min.js"></script>
+	<script src= "js/jquery.mask.min.js"></script>
+	<script>
+		$("#cpf").mask("999.999.999-99");
+		$("#data").mask("99/99/9999");
+		$("#celular").mask("(99) 99999-9999");
+		//$("#media").mask("09");
+ 		$("#media").mask("09.9");
+	</script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/utilizando-boostrap.js"></script>
 </body>
